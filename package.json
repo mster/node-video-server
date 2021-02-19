@@ -9,12 +9,15 @@
   "author": "@mster",
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.847.0",
     "dotenv": "^8.2.0",
     "fastify": "^3.12.0",
     "fastify-autoload": "^3.4.2",
     "fastify-file-upload": "^3.0.0",
     "fastify-helmet": "^5.2.0",
+    "fastify-plugin": "^3.0.0",
     "http-errors": "^1.8.0",
+    "pg": "^8.5.1",
     "uuid": "^8.3.2"
   }
 }

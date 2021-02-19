@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const handlers = require('../handlers/watch');
 
 module.exports = async function(fastify, opts) {
     fastify.setNotFoundHandler(function notFoundHandler (req, reply) {
@@ -14,7 +15,13 @@ module.exports = async function(fastify, opts) {
     fastify.get(
         '/',
         {},
-        require("../handlers/watch")
+        handlers.local
+    )
+
+    fastify.get(
+        '/s3',
+        {},
+        handlers.s3
     )
 }
 

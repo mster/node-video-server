@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const handlers = require('../handlers/upload');
 
 module.exports = async function(fastify, opts) {
     fastify.setNotFoundHandler(function notFoundHandler (req, reply) {
@@ -28,8 +29,16 @@ module.exports = async function(fastify, opts) {
     fastify.post(
         '/new',
         {},
-        require('../handlers/upload')
+        handlers.local
     )
+
+    fastify.post(
+        '/new-s3',
+        {},
+        handlers.s3
+    )
+
+
 }
 
 module.exports.autoPrefix = '/upload';

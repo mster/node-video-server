@@ -5,6 +5,8 @@ const fastify = require('fastify');
 const autoload = require('fastify-autoload');
 const helmet = require('fastify-helmet');
 
+require('dotenv').config();
+
 function build (opts = {}) {
     const app = fastify(opts);
 
